@@ -28,7 +28,7 @@ body {
 }
 
 .main-title {
-    width: 220px;
+    width: 400px;
     font-size: 25px;
 }
 
@@ -44,6 +44,3 @@ body {
     justify-content: center;
 }
 
-#shoot-title {
-    font-size: 40px;
-}

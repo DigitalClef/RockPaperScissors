@@ -17,8 +17,11 @@ function userInputValid(validChoice) {
 
 //this function will take user input and computer choice as arguments and generate 
 //win or lose messages based on results
-function game(playerSelection, computerSelection) {
+function game() {
     for (let i = 0; i < 5; i++) {
+        let playerSelection = userInputValid();
+        let computerSelection = computerPlay();
+
         if (playerSelection === 'ROCK') {
             document.getElementById('userChoice').innerHTML = 'Your choice: Rock';
             if (computerSelection === 'Scissors') {
@@ -73,15 +76,9 @@ function game(playerSelection, computerSelection) {
                 document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
             }
         }
+        console.log('You: ' + playerSelection);
+        console.log('Computer: ' + computerSelection);
     }
 }
 
-
-// initialize variable to be assigned computer value
-let computerChoice = computerPlay();
-let userChoice = userInputValid();
-
-game(userChoice, computerChoice);
-
-console.log('Computer: ' + computerChoice);
-console.log('You: ' + userChoice);
+game();
