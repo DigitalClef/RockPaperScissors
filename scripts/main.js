@@ -21,39 +21,55 @@ function roundRPS(playerSelection, computerSelection) {
     if (playerSelection === 'ROCK') {
         document.getElementById('userChoice').innerHTML = 'Your choice: Rock';
         if (computerSelection === 'Scissors') {
-            document.querySelector('p').innerHTML = 'You win! Rock beats scissors!';
+            document.getElementById('results-message').innerHTML = 'You win! Rock beats scissors!';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
         }
         else if (computerSelection === 'Paper') {
-            document.querySelector('p').innerHTML = 'You lose. Paper beats rock...';
+            document.getElementById('results-message').innerHTML = 'You lose. Paper beats rock...';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
         }
+        
         else {
-            document.querySelector('p').innerHTML = 'It\'s a tie!';
+            document.getElementById('results-message').innerHTML = 'It\'s a tie!';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
         }
+        
     }
 
     else if (playerSelection === 'SCISSORS') {
         document.getElementById('userChoice').innerHTML = 'Your choice: Scissors';
         if (computerSelection === 'Paper') {
-            document.querySelector('p').innerHTML = 'You win! Scissors beats paper!';
+            document.getElementById('results-message').innerHTML = 'You win! Scissors beats paper!';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
         }
+        
         else if (computerSelection === 'Rock') {
-            document.querySelector('p').innerHTML = 'You lose. Rock beats scissors...';
+            document.getElementById('results-message').innerHTML = 'You lose. Rock beats scissors...';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
         }
+        
         else {
-            document.querySelector('p').innerHTML = 'It\'s a tie!';
+            document.getElementById('results-message').innerHTML = 'It\'s a tie!';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
         }
+        
     }
 
     else if (playerSelection === 'PAPER') {
         document.getElementById('userChoice').innerHTML = 'Your choice: Paper';
         if (computerSelection === 'Rock') {
-            document.querySelector('p').innerHTML = 'You win! Paper beats rock!';
+            document.getElementById('results-message').innerHTML = 'You win! Paper beats rock!';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
         }
+        
         else if (computerSelection === 'Scissors') {
-            document.querySelector('p').innerHTML = 'You lose. Scissors beats paper...';
+            document.getElementById('results-message').innerHTML = 'You lose. Scissors beats paper...';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
         }
+        
         else {
-            document.querySelector('p').innerHTML = 'It\'s a tie!';
+            document.getElementById('results-message').innerHTML = 'It\'s a tie!';
+            document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
         }
     }
     
