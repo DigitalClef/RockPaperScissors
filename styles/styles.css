@@ -10,11 +10,40 @@ body {
     align-content: center;
 }
 
+.border {
+    display: flex;
+    justify-content: center ;
+    width: 100%;
+}
+
 #choice-message {
     display: flex;
     justify-content: space-evenly;
 }
 
+#header-border {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.main-title {
+    width: 220px;
+    font-size: 25px;
+}
+
+#message-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
 #results-message {
     font-size: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#shoot-title {
+    font-size: 40px;
 }

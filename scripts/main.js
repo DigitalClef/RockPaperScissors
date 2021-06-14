@@ -17,62 +17,63 @@ function userInputValid(validChoice) {
 
 //this function will take user input and computer choice as arguments and generate 
 //win or lose messages based on results
-function roundRPS(playerSelection, computerSelection) {
-    if (playerSelection === 'ROCK') {
-        document.getElementById('userChoice').innerHTML = 'Your choice: Rock';
-        if (computerSelection === 'Scissors') {
-            document.getElementById('results-message').innerHTML = 'You win! Rock beats scissors!';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
+function game(playerSelection, computerSelection) {
+    for (let i = 0; i < 5; i++) {
+        if (playerSelection === 'ROCK') {
+            document.getElementById('userChoice').innerHTML = 'Your choice: Rock';
+            if (computerSelection === 'Scissors') {
+                document.getElementById('results-message').innerHTML = 'You win!';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
+            }
+            else if (computerSelection === 'Paper') {
+                document.getElementById('results-message').innerHTML = 'You lose...';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
+            }
+            
+            else {
+                document.getElementById('results-message').innerHTML = 'It\'s a tie!';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
+            }
+            
         }
-        else if (computerSelection === 'Paper') {
-            document.getElementById('results-message').innerHTML = 'You lose. Paper beats rock...';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
-        }
-        
-        else {
-            document.getElementById('results-message').innerHTML = 'It\'s a tie!';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
-        }
-        
-    }
 
-    else if (playerSelection === 'SCISSORS') {
-        document.getElementById('userChoice').innerHTML = 'Your choice: Scissors';
-        if (computerSelection === 'Paper') {
-            document.getElementById('results-message').innerHTML = 'You win! Scissors beats paper!';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
+        else if (playerSelection === 'SCISSORS') {
+            document.getElementById('userChoice').innerHTML = 'Your choice: Scissors';
+            if (computerSelection === 'Paper') {
+                document.getElementById('results-message').innerHTML = 'You win!';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
+            }
+            
+            else if (computerSelection === 'Rock') {
+                document.getElementById('results-message').innerHTML = 'You lose...';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
+            }
+            
+            else {
+                document.getElementById('results-message').innerHTML = 'It\'s a tie!';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
+            }
+            
         }
-        
-        else if (computerSelection === 'Rock') {
-            document.getElementById('results-message').innerHTML = 'You lose. Rock beats scissors...';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
-        }
-        
-        else {
-            document.getElementById('results-message').innerHTML = 'It\'s a tie!';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
-        }
-        
-    }
 
-    else if (playerSelection === 'PAPER') {
-        document.getElementById('userChoice').innerHTML = 'Your choice: Paper';
-        if (computerSelection === 'Rock') {
-            document.getElementById('results-message').innerHTML = 'You win! Paper beats rock!';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
-        }
-        
-        else if (computerSelection === 'Scissors') {
-            document.getElementById('results-message').innerHTML = 'You lose. Scissors beats paper...';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
-        }
-        
-        else {
-            document.getElementById('results-message').innerHTML = 'It\'s a tie!';
-            document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
+        else if (playerSelection === 'PAPER') {
+            document.getElementById('userChoice').innerHTML = 'Your choice: Paper';
+            if (computerSelection === 'Rock') {
+                document.getElementById('results-message').innerHTML = 'You win!';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Rock';
+            }
+            
+            else if (computerSelection === 'Scissors') {
+                document.getElementById('results-message').innerHTML = 'You lose...';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Scissors';
+            }
+            
+            else {
+                document.getElementById('results-message').innerHTML = 'It\'s a tie!';
+                document.getElementById('comChoice').innerHTML = 'Computer choice: Paper';
+            }
         }
     }
-    
 }
 
 
@@ -80,7 +81,7 @@ function roundRPS(playerSelection, computerSelection) {
 let computerChoice = computerPlay();
 let userChoice = userInputValid();
 
-roundRPS(userChoice, computerChoice);
+game(userChoice, computerChoice);
 
 console.log('Computer: ' + computerChoice);
 console.log('You: ' + userChoice);

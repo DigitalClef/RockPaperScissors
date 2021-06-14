@@ -7,19 +7,22 @@
         <link rel='stylesheet' href='styles/styles.css'>
     </head>
     <body>
-        <header>
-            <h1>RPS</h1>
+        <header class='border' id='header-border'>
+            <p class='main-title'>Rock, Paper, Scissors...</p>
+            
+            <p id='shoot-title' class='main-title'>SHOOT!</p>
+
         </header>
-        <main>
-            <p id='results-message'></p>
+        <main id='message-box'>
+            <div id='results-message'></div>
             <div id='choice-message'>
                 <p id='userChoice'>Your choice: </p>
                 <p id='comChoice'>Computer choice: </p>
             </div>
             
         </main>
-        <footer>
-            <h2>Bottom area for something</h2>
+        <footer class='border'>
+            <h2></h2>
         </footer>
 
         <script src='scripts/main.js'></script>
