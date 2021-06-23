@@ -21,6 +21,7 @@ document.querySelectorAll('input').forEach(function(input) {
         const computerImage = document.querySelector('#computer-image');
 
         if (input.dataset.choice === 'rock') {
+            //input.classList.add('rps-button-chosen');
             if (computerChoice === 'scissors') {
                 computerImage.src = 'images/scissors.png';
                 userCounter++;
