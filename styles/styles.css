@@ -1,46 +1,51 @@
-html {
-    height: 100%;
+
+#computer-selection {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    border: 2.5px solid black;
+    border-radius: 5%;
 }
 
-body {
-    height: 100%;
+
+.h1 {
     display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 35px;
 }
 
-.border {
+.main-title {
     display: flex;
-    justify-content: center ;
-    width: 100%;
+    justify-content: center;
+    font-size: 70px;
+    font-family: 'Amatic SC', cursive;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-#choice-message {
+.rps-button {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    border: 2.5px solid black;
+    border-radius: 5%;
+}
+
+.rps-button:hover {
+    transform: scale(1.1)
+}
+
+.user-choice {
+    box-shadow: 1px 1px 30px #56b9da;
+}
+
+#user-select-box {
     display: flex;
     justify-content: space-evenly;
 }
 
-#header-border {
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-}
-
-.main-title {
-    width: 400px;
-    font-size: 25px;
-}
-
-#message-box {
+#weapon-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;   
 }
-
-
-#results-message {
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-}
-
