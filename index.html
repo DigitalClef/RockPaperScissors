@@ -18,16 +18,18 @@
             <div id='user-select-box'>
                 <input type='image'  alt='rock' src='images/rock.png' name='rock' data-choice='rock' class='rps-button'>             
                 <input type='image' src='images/paper.png' name='paper' data-choice='paper' class='rps-button'>
-                <input type='image' src='images/scissors.png' name='scissors' data-choice="scissors" class='rps-button'>
+                <input type='image' src='images/scissors.png' name='scissors' data-choice='scissors' class='rps-button'>
             </div>
             <h1 class='h1'> Computer's weapon</h1>
             <div class='h1'>
-                <img src='images/paper.png' id='computer-selection'>
+                <img src='' id='computer-image'>
             </div>
-            <div>
-                <p id='user-score'>Your score: </p>
-                <p id='computer-score'>Computer score: </p>
-                <p id='results-message'>YOU WIN!</p>
+            <div id='scoreboard-box'>
+                <div id='win-lose-box'>
+                    <p id='user-score' class='scoreboard-info'>Your Score: 0</p>
+                    <p id='computer-score' class='scoreboard-info'>Computer Score: 0</p>
+                </div>
+                <p id='results-message' class='scoreboard-info'>Who will win?</p>
                 <Button id='new-game'>New game</Button>
             </div>
         </main>
