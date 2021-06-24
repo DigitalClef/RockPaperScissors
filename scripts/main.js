@@ -13,6 +13,7 @@ let userCounter = 0;
 let roundCounter = 0;
 
 document.querySelectorAll('input').forEach(function(input) {
+
     input.onclick = function() {
         let computerChoice = computerPlay();
         const computerScore = document.querySelector('#computer-score');
@@ -46,7 +47,7 @@ document.querySelectorAll('input').forEach(function(input) {
             if (computerChoice === 'rock') {
                 computerImage.src = 'images/rock.png';
                 userCounter++;
-                userScore.innerText = `Computer Score: ${userCounter}`;
+                userScore.innerText = `Your Score: ${userCounter}`;
             }
             if (computerChoice === 'paper') {
                 computerImage.src = 'images/paper.png';
@@ -71,10 +72,6 @@ document.querySelectorAll('input').forEach(function(input) {
         
         roundCounter++;
 
-        console.log(`User: ${userCounter}`);
-        console.log(`Computer: ${computerCounter}`);
-        console.log(computerChoice);
-        console.log(roundCounter);
         if (roundCounter === 5) {
             if (userCounter > computerCounter) {
                 resultMessage.innerText = 'You win!';
