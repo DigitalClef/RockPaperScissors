@@ -83,5 +83,16 @@ document.querySelectorAll('input').forEach(function(input) {
                 resultMessage.innerText = 'It\s a tie!';
             }
         }
+        //resets game
+        document.querySelector('#new-game').onclick = function() {
+            userCounter = 0;
+            computerCounter = 0;
+            roundCounter = 0;
+            userScore.innerText = `Your Score: ${userCounter}`;
+            computerScore.innerText = `Computer Score: ${computerCounter}`;
+            resultMessage.innerText = 'Best out of five! Who will win?';
+        }
     }  
 });
+
+
