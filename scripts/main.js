@@ -1,28 +1,34 @@
-
 //this function will randomly select rock, paper, or scissors from an array
 function computerPlay() {
     const rps = ['rock', 'paper', 'scissors'];
-    let index = Math.floor(Math.random() * 3);
-    return rps[index];
+    return rps[Math.floor(Math.random() * 3)];
 };
 
-//initialize variables to keep track of computer score, user score, and
-//round number, respectively
+//initialize variables 
 let computerCounter = 0;
 let userCounter = 0;
-let roundCounter = 0;
+let roundCounter = 2;
+const computerScore = document.querySelector('#computer-score');
+const userScore = document.querySelector('#user-score');
+const resultMessage = document.querySelector('#results-message'); 
+const computerImage = document.querySelector('#computer-image');
+const allInputs = document.querySelectorAll('input');
+//const userButtons = document.querySelectorAll('.rps-button');
 
-document.querySelectorAll('input').forEach(function(input) {
 
-    input.onclick = function() {
+//iterates through nodelist of inputs elements 
+allInputs.forEach(function(input) {
+    input.onclick = function() { //generate game when upon click
+        
+        allInputs.forEach(function(input) { 
+        input.style.backgroundColor = 'rgb(146, 216, 240)'; //sets each background color to blue;
+        });
+        
         let computerChoice = computerPlay();
-        const computerScore = document.querySelector('#computer-score');
-        const userScore = document.querySelector('#user-score');
-        const resultMessage = document.querySelector('#results-message'); 
-        const computerImage = document.querySelector('#computer-image');
-
+        resultMessage.innerText = `Round ${roundCounter}`;
+        input.style.backgroundColor = '#76f597';
+        
         if (input.dataset.choice === 'rock') {
-            //input.classList.add('rps-button-chosen');
             if (computerChoice === 'scissors') {
                 computerImage.src = 'images/scissors.png';
                 userCounter++;
@@ -38,7 +44,7 @@ document.querySelectorAll('input').forEach(function(input) {
             }
         }  
         
-        if (input.dataset.choice === 'paper') {
+        else if (input.dataset.choice === 'paper') {
             if (computerChoice === 'scissors') {
                 computerImage.src = 'images/scissors.png';
                 computerCounter++;
@@ -54,7 +60,7 @@ document.querySelectorAll('input').forEach(function(input) {
             }
         }
 
-        if (input.dataset.choice === 'scissors') {
+        else if (input.dataset.choice === 'scissors') {
             if (computerChoice === 'paper') {
                 computerImage.src = 'images/paper.png';
                 userCounter++;
@@ -68,31 +74,38 @@ document.querySelectorAll('input').forEach(function(input) {
             if (computerChoice === 'scissors') {
                 computerImage.src = 'images/scissors.png';
             }
-        }
-        
+        } 
         roundCounter++;
-
-        if (roundCounter === 5) {
+        if (roundCounter === 7) {
+            
+            allInputs.forEach(function(input) { //disables buttons for user
+                input.disabled = true;
+            });
+        
             if (userCounter > computerCounter) {
-                resultMessage.innerText = 'You win!';
+                resultMessage.innerText = 'You win! Click new game to play again!';
             }
             else if (userCounter < computerCounter) {
-                resultMessage.innerText = 'You lose!';
+                resultMessage.innerText = 'You lose! Click new game to play again!';
             }
             else {
-                resultMessage.innerText = 'It\s a tie!';
+                resultMessage.innerText = 'It\s a tie! Click new game to play again!';
             }
         }
-        //resets game
-        document.querySelector('#new-game').onclick = function() {
-            userCounter = 0;
-            computerCounter = 0;
-            roundCounter = 0;
-            userScore.innerText = `Your Score: ${userCounter}`;
-            computerScore.innerText = `Computer Score: ${computerCounter}`;
-            resultMessage.innerText = 'Best out of five! Who will win?';
-        }
-    }  
+    }
 });
 
 
+//resets game
+document.querySelector('#new-game').onclick = function() {
+    allInputs.forEach(function(input) {
+        input.disabled = false;
+        input.style.backgroundColor = 'rgb(146, 216, 240)';
+    });
+    userCounter = 0;
+    computerCounter = 0;
+    roundCounter = 2;
+    userScore.innerText = `Your Score: ${userCounter}`;
+    computerScore.innerText = `Computer Score: ${computerCounter}`;
+    resultMessage.innerText = 'New game... Round 1';
+}
