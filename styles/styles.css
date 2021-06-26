@@ -59,6 +59,10 @@ html {
     margin-top: 0px;
 }
 
+#new-game:hover {
+    transform: scale(1.05);
+}
+
 
 #results-message {
     display: flex;
