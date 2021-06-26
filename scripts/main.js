@@ -102,6 +102,7 @@ document.querySelector('#new-game').onclick = function() {
         input.disabled = false;
         input.style.backgroundColor = 'rgb(146, 216, 240)';
     });
+    computerImage.src = 'images/question-mark.png';
     userCounter = 0;
     computerCounter = 0;
     roundCounter = 2;

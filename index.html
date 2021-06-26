@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet"> 
     </head>
-    <body>
+    <body id='body'>
         <header class='border' id='header-border'>
             <p class='main-title'>Rock, Paper, Scissors... SHOOT!</p>
         </header>
@@ -20,17 +20,17 @@
                 <input type='image' src='images/paper.png' name='paper' data-choice='paper' class='rps-button'>
                 <input type='image' src='images/scissors.png' name='scissors' data-choice='scissors' class='rps-button'>
             </div>
-            <h1 class='h1'> Computer:</h1>
+            <h1 class='h1' id='results-message'> Round 1</h1>
             <div class='h1'>
-                <img src='' id='computer-image' class='computer-avatar'>
+                <img src='images/question-mark.png' id='computer-image' class='computer-avatar'>
                 <img src='images/computer-face.png' class='computer-avatar'>
             </div>
             <div id='scoreboard-box'>
                 <div id='win-lose-box'>
                     <p id='user-score' class='scoreboard-info'>Your Score: 0</p>
+                    <p class='scoreboard-info'>Computer</p>
                     <p id='computer-score' class='scoreboard-info'>Computer Score: 0</p>
                 </div>
-                <p id='results-message' class='scoreboard-info'>Best out of five... Round 1</p>
                 <button id='new-game'>New game</button>
             </div>
         </main>
